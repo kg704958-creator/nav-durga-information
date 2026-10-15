@@ -149,7 +149,8 @@ body {
 
 /* ==========================================================================
    6b. POSTER OVERLAY WHATSAPP INQUIRY BUTTON
-   Aligned precisely over the poster's printed 'अभी रजिस्ट्रेशन करें' area
+   Aligned precisely over the poster's printed 'अभी रजिस्ट्रेशन करें' area.
+   Distinct, high-contrast, accessible, gentle non-flashing emphasis.
    ========================================================================== */
 .poster-inquiry-btn {
   position: absolute;
@@ -160,39 +161,40 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(5px, 1.4vw, 10px);
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  gap: clamp(6px, 1.5vw, 12px);
+  background: linear-gradient(135deg, #25D366 0%, #1ea952 50%, #128C7E 100%);
   color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2.5px solid #ffffff;
   border-radius: 9999px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 14px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 16px rgba(37, 211, 102, 0.55);
   text-decoration: none;
-  font-weight: 700;
-  font-size: clamp(0.72rem, 2.3vw, 1.15rem);
+  font-weight: 800;
+  font-size: clamp(0.72rem, 2.25vw, 1.15rem);
   line-height: 1;
   white-space: nowrap;
   z-index: 20;
   cursor: pointer;
   box-sizing: border-box;
   padding: 0 clamp(8px, 2vw, 18px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
   -webkit-tap-highlight-color: rgba(37, 211, 102, 0.3);
-  animation: inquiryPulse 2.8s ease-in-out infinite;
+  animation: inquiryGentleEmphasis 3.2s ease-in-out infinite;
 }
 
 .poster-inquiry-btn:hover {
-  transform: scale(1.025);
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35), 0 0 20px rgba(37, 211, 102, 0.7);
-  filter: brightness(1.06);
+  transform: scale(1.025) translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.42), 0 0 0 1.5px #ffffff, 0 0 24px rgba(37, 211, 102, 0.85);
+  filter: brightness(1.08);
 }
 
 .poster-inquiry-btn:active {
-  transform: scale(0.98);
+  transform: scale(0.985) translateY(0);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3), 0 0 10px rgba(37, 211, 102, 0.4);
 }
 
 .poster-inquiry-btn:focus-visible {
   outline: 3px solid #ffeb3b;
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .poster-inquiry-icon {
@@ -200,20 +202,24 @@ body {
   height: clamp(14px, 2.4vw, 24px);
   flex-shrink: 0;
   fill: #ffffff;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 .poster-inquiry-text {
   color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.2px;
 }
 
-@keyframes inquiryPulse {
+/* Gentle, non-flashing soft breathing emphasis animation */
+@keyframes inquiryGentleEmphasis {
   0%, 100% {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 10px rgba(37, 211, 102, 0.4);
+    transform: scale(1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 14px rgba(37, 211, 102, 0.45);
   }
   50% {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 18px rgba(37, 211, 102, 0.75);
+    transform: scale(1.018);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4), 0 0 0 1.5px rgba(255, 255, 255, 0.95), 0 0 22px rgba(37, 211, 102, 0.72);
   }
 }
 
@@ -764,6 +770,25 @@ body {
     border-width: 1px;
     box-shadow: 0 0 6px rgba(255, 215, 0, 0.35);
   }
+
+  .organizer-info-card {
+    border-radius: 14px;
+    padding: 18px 16px;
+    margin-top: 14px;
+    width: calc(100% - 24px);
+    box-sizing: border-box;
+  }
+
+  .organizer-card-title {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
 }
 
 /* Ultra-compact Viewports (<= 360px, e.g. 320px Galaxy Fold) */
@@ -786,6 +811,19 @@ body {
     height: 28px !important;
     min-width: 28px !important;
     max-width: 28px !important;
+  }
+
+  .organizer-info-card {
+    padding: 14px 12px;
+    width: calc(100% - 16px);
+  }
+
+  .organizer-card-title {
+    font-size: 1.05rem;
+  }
+
+  .info-box-value {
+    font-size: 0.95rem;
   }
 }
 
@@ -821,7 +859,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .info-box {
@@ -876,41 +914,6 @@ body {
   transform: translateY(-1px);
 }
 
-.prize-summary-box {
-  background: #fbf9f5;
-  border: 1px solid rgba(217, 119, 6, 0.2);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 0;
-}
-
-.prize-summary-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #b45309;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.prize-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.prize-tag {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
-  padding: 5px 10px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #374151;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-}
-
 /* 12. Accessibility: Respect User's Reduced-Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
   .page-wrapper,
@@ -925,6 +928,7 @@ body {
   .showroom-frame {
     animation: none !important;
     transition: none !important;
+    transform: none !important;
   }
 
   #festive-canvas {
