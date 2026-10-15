@@ -1,0 +1,972 @@
+/* ==========================================================================
+   Nav Durga Gift Upahar Yojana 2026 - Official Festive Promotional Stylesheet
+   With In-Poster 3D Showroom Platform & Specular Lighting Animations
+   ========================================================================== */
+
+/* 1. Global Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: #fbf9f5;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #fbf9f5;
+  background-image: radial-gradient(circle at 50% 25%, rgba(255, 215, 0, 0.1) 0%, rgba(255, 153, 51, 0.05) 45%, #fbf9f5 100%);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* 2. Floating Festive Sparkle Canvas (Non-intrusive background) */
+#festive-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3. Screen Reader Accessibility */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 4. Main Page Layout Wrapper with Smooth Entrance Animation */
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 16px 40px;
+  z-index: 2;
+  animation: pageEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Unified Content Column: Centers poster & button with optimal 650–750px desktop width */
+.content-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 5. Divine Festive Ambient Aura behind the Poster */
+.poster-aura {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: 60px;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at center, rgba(255, 193, 7, 0.28) 0%, rgba(255, 107, 0, 0.14) 45%, rgba(255, 215, 0, 0) 75%);
+  filter: blur(24px);
+  pointer-events: none;
+  z-index: 0;
+  animation: auraGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes auraGlow {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* 6. Poster Container: Preserves exact 1020:1541 aspect ratio & hosts in-poster animations */
+.poster-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(217, 119, 6, 0.18), 0 4px 14px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  z-index: 2;
+}
+
+/* Poster Image */
+.poster-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: 1020 / 1541;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   7. ACCESSIBLE 2.5D SHOWROOM PRODUCT STAND ROTATION CONTROLS
+   ========================================================================== */
+.rotation-controls-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 25;
+}
+
+.rotator-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  border: 1.5px solid rgba(255, 215, 0, 0.85);
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 0 12px rgba(255, 215, 0, 0.35);
+  transition: all 0.25s ease;
+  outline: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rotator-toggle-btn:hover,
+.rotator-toggle-btn:focus-visible {
+  background: #ffffff;
+  border-color: #d97706;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 0 16px rgba(255, 215, 0, 0.55);
+  transform: translateY(-1px);
+}
+
+.rotator-toggle-btn:active {
+  transform: translateY(0);
+}
+
+.rotator-toggle-btn.is-paused {
+  background: rgba(254, 243, 199, 0.95);
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.rotator-toggle-btn .btn-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   7b. 2.5D SHOWROOM PRODUCT STAND ROTATION (ORIGINAL PRODUCT CUTOUTS)
+   ========================================================================== */
+.product-cutouts-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cutout-wrapper {
+  position: absolute;
+  perspective: 420px; /* Deep perspective creates clearly noticeable 3D depth */
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Precise Coordinates matching original poster product slots */
+/* Row 1: Cars */
+.prize-1 { left: 3.43%; top: 23.68%; width: 29.41%; height: 12.33%; }
+.prize-2 { left: 35.29%; top: 23.68%; width: 29.41%; height: 12.33%; }
+.prize-3 { left: 66.67%; top: 23.68%; width: 29.41%; height: 12.33%; }
+
+/* Row 2: Tractors & Bullet */
+.prize-4 { left: 3.43%; top: 41.86%; width: 30.39%; height: 12.33%; }
+.prize-5 { left: 35.29%; top: 41.86%; width: 28.43%; height: 12.33%; }
+.prize-6 { left: 65.20%; top: 41.86%; width: 30.88%; height: 12.33%; }
+
+/* Row 3: Pulsar & Scooters */
+.prize-7  { left: 3.43%;  top: 59.38%; width: 25.49%; height: 11.68%; }
+.prize-8  { left: 30.88%; top: 59.96%; width: 15.20%; height: 11.03%; }
+.prize-9  { left: 46.57%; top: 59.96%; width: 15.20%; height: 11.03%; }
+.prize-10 { left: 62.25%; top: 59.96%; width: 15.69%; height: 11.03%; }
+.prize-11 { left: 78.43%; top: 59.96%; width: 16.18%; height: 11.03%; }
+
+/* Row 4: Smartphones */
+.prize-12 { left: 11.27%; top: 74.30%; width: 18.14%; height: 7.79%; }
+.prize-13 { left: 39.22%; top: 74.30%; width: 19.61%; height: 7.79%; }
+.prize-14 { left: 68.63%; top: 74.30%; width: 21.57%; height: 7.79%; }
+
+/* The cutout image itself */
+.cutout-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform-origin: center 75%;
+  backface-visibility: hidden;
+  will-change: transform, filter;
+  animation-play-state: running;
+}
+
+/* Category 1: Cars Showroom Rotation Keyframes */
+@keyframes carShowroomA {
+  0% {
+    transform: rotateY(-14deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-8px 8px 8px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+  50% {
+    transform: rotateY(0deg) translateY(-4px) scale(1.03);
+    filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.28)) brightness(1.10) contrast(1.04);
+  }
+  100% {
+    transform: rotateY(14deg) translateY(0) scale(0.98);
+    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+}
+
+@keyframes carShowroomB {
+  0% {
+    transform: rotateY(14deg) translateY(0) scale(0.98);
+    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+  50% {
+    transform: rotateY(0deg) translateY(-4px) scale(1.03);
+    filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.28)) brightness(1.10) contrast(1.04);
+  }
+  100% {
+    transform: rotateY(-14deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-8px 8px 8px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+}
+
+/* Category 2: Tractors Showroom Rotation Keyframes */
+@keyframes tractorShowroomA {
+  0% {
+    transform: rotateY(-12deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-7px 8px 8px rgba(0, 0, 0, 0.25)) brightness(0.94);
+  }
+  50% {
+    transform: rotateY(0deg) translateY(-3px) scale(1.025);
+    filter: drop-shadow(0 11px 12px rgba(0, 0, 0, 0.30)) brightness(1.08);
+  }
+  100% {
+    transform: rotateY(12deg) translateY(0) scale(0.98);
+    filter: drop-shadow(7px 8px 8px rgba(0, 0, 0, 0.25)) brightness(0.94);
+  }
+}
+
+@keyframes tractorShowroomB {
+  0% {
+    transform: rotateY(12deg) translateY(0) scale(0.98);
+    filter: drop-shadow(7px 8px 8px rgba(0, 0, 0, 0.25)) brightness(0.94);
+  }
+  50% {
+    transform: rotateY(0deg) translateY(-3px) scale(1.025);
+    filter: drop-shadow(0 11px 12px rgba(0, 0, 0, 0.30)) brightness(1.08);
+  }
+  100% {
+    transform: rotateY(-12deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-7px 8px 8px rgba(0, 0, 0, 0.25)) brightness(0.94);
+  }
+}
+
+/* Category 3: Motorcycles Showroom Rotation Keyframes */
+@keyframes bikeShowroomA {
+  0% {
+    transform: rotateY(-15deg) rotateZ(-1.8deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-8px 7px 7px rgba(0, 0, 0, 0.24)) brightness(0.94);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-4px) scale(1.03);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.30)) brightness(1.12);
+  }
+  100% {
+    transform: rotateY(15deg) rotateZ(1.8deg) translateY(0) scale(0.98);
+    filter: drop-shadow(8px 7px 7px rgba(0, 0, 0, 0.24)) brightness(0.94);
+  }
+}
+
+@keyframes bikeShowroomB {
+  0% {
+    transform: rotateY(15deg) rotateZ(1.8deg) translateY(0) scale(0.98);
+    filter: drop-shadow(8px 7px 7px rgba(0, 0, 0, 0.24)) brightness(0.94);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-4px) scale(1.03);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.30)) brightness(1.12);
+  }
+  100% {
+    transform: rotateY(-15deg) rotateZ(-1.8deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-8px 7px 7px rgba(0, 0, 0, 0.24)) brightness(0.94);
+  }
+}
+
+/* Category 4: Electric Scooters Showroom Rotation Keyframes */
+@keyframes scooterShowroomA {
+  0% {
+    transform: rotateY(-16deg) rotateZ(-1.2deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-6px 7px 7px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-3.5px) scale(1.03);
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.26)) brightness(1.10);
+  }
+  100% {
+    transform: rotateY(16deg) rotateZ(1.2deg) translateY(0) scale(0.98);
+    filter: drop-shadow(6px 7px 7px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+}
+
+@keyframes scooterShowroomB {
+  0% {
+    transform: rotateY(16deg) rotateZ(1.2deg) translateY(0) scale(0.98);
+    filter: drop-shadow(6px 7px 7px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-3.5px) scale(1.03);
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.26)) brightness(1.10);
+  }
+  100% {
+    transform: rotateY(-16deg) rotateZ(-1.2deg) translateY(0) scale(0.98);
+    filter: drop-shadow(-6px 7px 7px rgba(0, 0, 0, 0.22)) brightness(0.95);
+  }
+}
+
+/* Category 5: Smartphones Showroom Floating Keyframes */
+@keyframes phoneShowroomA {
+  0% {
+    transform: rotateY(-20deg) rotateZ(-1.5deg) translateY(0) scale(0.97);
+    filter: drop-shadow(-5px 6px 6px rgba(0, 0, 0, 0.25)) brightness(0.93);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-5px) scale(1.04);
+    filter: drop-shadow(0 10px 12px rgba(56, 189, 248, 0.35)) brightness(1.16) contrast(1.05);
+  }
+  100% {
+    transform: rotateY(20deg) rotateZ(1.5deg) translateY(0) scale(0.97);
+    filter: drop-shadow(5px 6px 6px rgba(0, 0, 0, 0.25)) brightness(0.93);
+  }
+}
+
+@keyframes phoneShowroomB {
+  0% {
+    transform: rotateY(20deg) rotateZ(1.5deg) translateY(0) scale(0.97);
+    filter: drop-shadow(5px 6px 6px rgba(0, 0, 0, 0.25)) brightness(0.93);
+  }
+  50% {
+    transform: rotateY(0deg) rotateZ(0deg) translateY(-5px) scale(1.04);
+    filter: drop-shadow(0 10px 12px rgba(56, 189, 248, 0.35)) brightness(1.16) contrast(1.05);
+  }
+  100% {
+    transform: rotateY(-20deg) rotateZ(-1.5deg) translateY(0) scale(0.97);
+    filter: drop-shadow(-5px 6px 6px rgba(0, 0, 0, 0.25)) brightness(0.93);
+  }
+}
+
+/* Staggered independent product animation timings */
+/* Cars: Grand Vitara, Baleno, Swift */
+.stand-rot-1  { animation: carShowroomA 3.2s ease-in-out infinite alternate; animation-delay: 0.0s; }
+.stand-rot-2  { animation: carShowroomB 3.5s ease-in-out infinite alternate; animation-delay: -1.0s; }
+.stand-rot-3  { animation: carShowroomA 3.0s ease-in-out infinite alternate; animation-delay: -2.1s; }
+
+/* Tractors: Mahindra, Powertrac */
+.stand-rot-4  { animation: tractorShowroomA 3.4s ease-in-out infinite alternate; animation-delay: -0.5s; }
+.stand-rot-5  { animation: tractorShowroomB 3.6s ease-in-out infinite alternate; animation-delay: -1.8s; }
+
+/* Motorcycles: Bullet, Pulsar */
+.stand-rot-6  { animation: bikeShowroomA 2.9s ease-in-out infinite alternate; animation-delay: -2.2s; }
+.stand-rot-7  { animation: bikeShowroomB 3.1s ease-in-out infinite alternate; animation-delay: -0.9s; }
+
+/* Scooters: Blue, White, Red, Dark Blue */
+.stand-rot-8  { animation: scooterShowroomA 2.7s ease-in-out infinite alternate; animation-delay: -0.4s; }
+.stand-rot-9  { animation: scooterShowroomB 2.9s ease-in-out infinite alternate; animation-delay: -1.6s; }
+.stand-rot-10 { animation: scooterShowroomA 3.1s ease-in-out infinite alternate; animation-delay: -2.5s; }
+.stand-rot-11 { animation: scooterShowroomB 2.8s ease-in-out infinite alternate; animation-delay: -1.1s; }
+
+/* Phones: iPhone 16, 17 Pro, 18 Pro */
+.stand-rot-12 { animation: phoneShowroomA 2.6s ease-in-out infinite alternate; animation-delay: -0.6s; }
+.stand-rot-13 { animation: phoneShowroomB 2.8s ease-in-out infinite alternate; animation-delay: -1.9s; }
+.stand-rot-14 { animation: phoneShowroomA 2.7s ease-in-out infinite alternate; animation-delay: -1.3s; }
+
+/* Pause state override when user toggles pause */
+.animations-paused .cutout-img {
+  animation-play-state: paused !important;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  :root:not(.force-animations-active) .cutout-img {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* 8. Functional Registration Button Overlay (Over poster's 'अभी रजिस्ट्रेशन करें') */
+.registration-overlay {
+  position: absolute;
+  left: 22.3%;
+  top: 92.9%;
+  width: 55.4%;
+  height: 5.6%;
+  border-radius: 9999px;
+  cursor: pointer;
+  z-index: 30;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(37, 211, 102, 0.3);
+  animation: regButtonPulse 2.2s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  outline: none;
+}
+
+@keyframes regButtonPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5), inset 0 0 4px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(255, 215, 0, 0.95), 0 0 32px rgba(255, 100, 0, 0.35), inset 0 0 12px rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 1);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5), inset 0 0 4px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: scale(1);
+  }
+}
+
+.registration-overlay:hover {
+  box-shadow: 0 0 26px rgba(255, 255, 255, 1), 0 0 36px rgba(255, 215, 0, 0.9), inset 0 0 14px rgba(255, 255, 255, 0.8) !important;
+  transform: scale(1.03) !important;
+  border-color: #ffffff !important;
+}
+
+.registration-overlay:active {
+  transform: scale(0.98) !important;
+}
+
+.registration-overlay:focus-visible {
+  outline: 3px solid #25D366;
+  outline-offset: 3px;
+}
+
+/* 9. Action Container: Small attractive gap below poster */
+.action-container {
+  position: relative;
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  z-index: 2;
+}
+
+.btn-aura {
+  position: absolute;
+  width: 80%;
+  max-width: 580px;
+  height: 50px;
+  border-radius: 9999px;
+  background: radial-gradient(ellipse at center, rgba(37, 211, 102, 0.38) 0%, rgba(18, 140, 126, 0.15) 55%, transparent 75%);
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: -1;
+  animation: btnAuraPulse 2.6s infinite ease-in-out;
+}
+
+@keyframes btnAuraPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* 10. Large Animated WhatsApp CTA Button */
+.whatsapp-btn {
+  position: relative;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  width: 85% !important;
+  max-width: 620px !important;
+  min-height: 62px !important;
+  padding: 14px 28px !important;
+  background: linear-gradient(135deg, #25D366 0%, #20BA5A 50%, #128C7E 100%) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-family: inherit !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.44), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  cursor: pointer !important;
+  border: none !important;
+  outline: none !important;
+  animation: whatsappPulse 2.6s infinite ease-in-out !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease !important;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none !important;
+  overflow: hidden;
+}
+
+.whatsapp-btn:link,
+.whatsapp-btn:visited,
+.whatsapp-btn:active,
+.whatsapp-btn:focus {
+  color: #ffffff !important;
+}
+
+.whatsapp-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 80%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: btnShine 4.5s infinite ease-in-out;
+}
+
+@keyframes btnShine {
+  0%, 65% {
+    left: -120%;
+  }
+  100% {
+    left: 220%;
+  }
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.025) !important;
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.6), 0 0 22px rgba(37, 211, 102, 0.35) !important;
+  filter: brightness(1.05) !important;
+  color: #ffffff !important;
+}
+
+.whatsapp-btn:active {
+  transform: translateY(1px) scale(0.98) !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45) !important;
+}
+
+.whatsapp-btn:focus-visible {
+  outline: 3px solid #128C7E !important;
+  outline-offset: 3px !important;
+}
+
+.whatsapp-icon {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  max-width: 38px !important;
+  flex-shrink: 0 !important;
+  fill: #ffffff !important;
+  color: #ffffff !important;
+  display: block !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.whatsapp-btn-text {
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65), 0 8px 26px rgba(37, 211, 102, 0.44);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0), 0 12px 32px rgba(37, 211, 102, 0.54);
+    transform: translateY(-2px) scale(1.015);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 8px 26px rgba(37, 211, 102, 0.44);
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 11. Strict Mobile-First Breakpoints */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 0 32px 0;
+  }
+
+  .poster-aura {
+    display: none;
+  }
+
+  .poster-container {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  .action-container {
+    margin-top: 14px;
+    padding: 0 16px;
+  }
+
+  .whatsapp-btn {
+    width: 90% !important;
+    max-width: 100% !important;
+    min-height: 54px !important;
+    padding: 12px 20px !important;
+    font-size: 1.15rem !important;
+    gap: 10px !important;
+  }
+
+  .whatsapp-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    max-width: 32px !important;
+  }
+
+  .turntable-platform {
+    border-width: 1px;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.35);
+  }
+}
+
+/* Ultra-compact Viewports (<= 360px, e.g. 320px Galaxy Fold) */
+@media (max-width: 360px) {
+  .action-container {
+    padding: 0 10px;
+    margin-top: 12px;
+  }
+
+  .whatsapp-btn {
+    width: 95% !important;
+    padding: 10px 14px !important;
+    font-size: 1rem !important;
+    min-height: 48px !important;
+    gap: 8px !important;
+  }
+
+  .whatsapp-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+  }
+}
+
+/* ==========================================================================
+   11b. INFORMATIONAL-ONLY VERSION COMPONENT STYLES
+   ========================================================================== */
+.info-notice-banner {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(135deg, rgba(255, 248, 235, 0.95), rgba(254, 243, 199, 0.95));
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #78350f;
+  line-height: 1.45;
+}
+
+.info-notice-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.poster-notice-box {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid rgba(217, 119, 6, 0.45);
+  border-left: 5px solid #d97706;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.1);
+  box-sizing: border-box;
+}
+
+.poster-notice-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #92400e;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.poster-notice-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.poster-notice-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #78350f;
+  line-height: 1.55;
+}
+
+.poster-notice-text em {
+  font-style: normal;
+  font-weight: 700;
+  color: #b91c1c;
+  background: rgba(254, 226, 226, 0.75);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.poster-notice-text strong {
+  color: #7c2d12;
+  font-weight: 700;
+}
+
+.organizer-info-card {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 0 15px rgba(255, 215, 0, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.organizer-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #92400e;
+  text-align: center;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background: rgba(254, 243, 199, 0.35);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-box-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #b45309;
+  letter-spacing: 0.5px;
+}
+
+.info-box-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.helpline-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1.5px solid #2563eb;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tel-link:hover {
+  background: #eff6ff;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.prize-summary-box {
+  background: #fbf9f5;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.prize-summary-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b45309;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prize-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prize-tag {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.disclaimer-box {
+  background: rgba(239, 68, 68, 0.06);
+  border-left: 4px solid #ef4444;
+  border-radius: 4px 8px 8px 4px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: #7f1d1d;
+  line-height: 1.5;
+}
+
+.version-switch-bar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.version-switch-link {
+  color: #92400e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.version-switch-link:hover {
+  color: #b45309;
+}
+
+/* 12. Accessibility: Respect User's Reduced-Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .page-wrapper,
+  .whatsapp-btn,
+  .whatsapp-btn::after,
+  .registration-overlay,
+  .poster-aura,
+  .btn-aura,
+  .turntable-platform,
+  .studio-light-sweep,
+  .showroom-frame {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  #festive-canvas {
+    display: none !important;
+  }
+}
